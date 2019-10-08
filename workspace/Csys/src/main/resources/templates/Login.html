@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+
+     
+     <link rel="stylesheet" type="text/css" href="../static/css/stylelogin.css"
+     th:href="@{css/stylelogin.css}"/>
+<title>Login</title>
+</head>
+<body >
+
+
+
+<form action="/home">
+    <h2>Bienvenue</h2>
+    <div class="imgcontainer">
+        <canvas id="canvas" width="150" height="150">
+            <p>votre navigateur ne support pas canvas.Mettez vous a jours</p>
+        </canvas>
+
+    </div>
+
+    <div class="container" >
+        <label><b>Non de l'utilisateur</b></label>
+        <input type="text" placeholder="Entrer Non de l'utilisateur" name="uname"  required="required" />
+
+        <label><b>Mot de passe</b></label>
+        <input type="password" placeholder="Entrer Mot de passe" name="psw" required="required" />
+
+        <button type="submit">Connecter</button>
+        <input type="checkbox" checked="checked"/> Enregister mot de passe !
+    </div>
+
+    <div class="container" style="  background: rgba(76, 175, 80, 0.3);">
+        <button type="button" class="cancelbtn">Annuler</button>
+        <span class="psw">oublier <a href="#">Mot de passe?</a></span>
+    </div>
+</form>
+<script>
+    var canvas=document.getElementById('canvas');
+    var context =canvas.getContext('2d');
+    context.strokeStyle= "green";
+    context.lineWidth= "3";
+
+    context.beginPath(); // Le cercle extérieur
+    context.arc(75, 75, 50, 0, Math.PI* 2);
+    context.stroke();
+
+    context.beginPath(); // La bouche, un arc de cercle
+    context.fillStyle= "#4CAF50";
+    context.arc(75, 75, 40, 0, Math.PI); // Ici aussi
+    context.fill();
+
+    context.beginPath(); // L'oeil gauche
+    context.arc(55, 40, 20, (Math.PI/ 180) * 30, (Math.PI/ 180) * 150);
+    context.stroke();
+
+    context.beginPath(); // L'oeil droit
+    context.arc(95, 40, 20, (Math.PI/ 180) * 30, (Math.PI/ 180) * 150);
+    context.stroke();
+
+    context.beginPath(); // L'oeil droit
+    context.arc(75, 65, 5, (Math.PI/ 180) * 0, (Math.PI/ 180) * 360);
+    context.fillStyle="red";
+    context.fill();
+
+
+</script>
+
+</body>
+</html>

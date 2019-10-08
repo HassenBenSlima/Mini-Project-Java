@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Inscription</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+</head>
+<body ng-app="myApp" ng-controller="ListEtudiantController" >
+	
+	<header>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class=" container-fluid" >
+      <ul class="nav navbar-nav">
+      <li><a  href="#/home">Home</a></li>
+<!--       <li><a  href="#/listEtudiants">Etudiants</a></li>
+ -->      <li><a  href="#/listClients">Clients</a></li>
+      </ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a  href="/logout">Logout</a></li>
+     
+</ul>  
+      
+  
+    </div>
+  </div>
+</header>
+
+	<div ui-view >
+ 
+	</div>	
+
+	<footer class="navbar-fixed-bottom">
+	<small>@Adresse</small>
+	</footer>
+	
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="//unpkg.com/angular-ui-router@0.3.1/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="js/myApp.js"></script>
+
+
+</body>
+</html>

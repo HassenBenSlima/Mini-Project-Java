@@ -1,0 +1,49 @@
+<div ui-view>
+
+
+	<div class=" container col-md-6 col-sm-6 col-xs-12 spacer col-md-offset-3">
+	
+	<div class="panel panel-primary">
+	<div class="panel panel-heading">Liste des Clients</div>
+	
+	<div class="panel-body">
+	<div class="container ">
+	<label>Mot clé:</label>
+	<input type="text" ng-model="motCle"/>
+	<button ng-click="listClients()">Chercher</button>
+	</div>
+	</div>
+	
+	<table class="table table-striped">
+	<thead>
+	<tr>
+	<th>ID</th><th>Nom</th><th>Adresse</th><th>email</th>
+	<th>tel</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="e in pageClients.content">
+	<td>{{e.idClient}}</td>
+	<td>{{e.nomClient}}</td>
+	<td>{{e.adresse}}</td>
+	<td>{{e.email}}</td>
+	<td>{{e.tel}}</td>
+	</tr>
+	</tbody>
+	
+	</table>
+	<div class="container">
+	<ul class="nav nav-pills">
+	<li ng-class="{'active':pageCourante==$index}" class="clickable" ng-repeat="p in pages track by $index">
+	<a ng-click="gotoPage($index)">{{$index}}</a>
+	</li>
+	</ul>
+	
+	</div>
+	
+	
+	</div>
+	</div>
+	
+	
+	</div>

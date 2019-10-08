@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="template">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+     th:href="@{css/bootstrap.min.css}"/>
+     
+     <link rel="stylesheet" type="text/css" href="../static/css/myStyle.css"
+     th:href="@{css/myStyle.css}"/>
+<title>Suivie Gens</title>
+</head>
+<body  layout:fragment="content" >
+<div class=" table col-md-12 col-sm-12  col-xs-12 spacer container ">
+
+<div class="panel panel-default">
+<div class="panel-heading">Suivie Gens</div>
+<div class="panel-body ">
+
+<form th:action="@{Index}" method="get">
+<div class=" container form-group">
+<label>Mot Clé:</label>
+<input type="text" name="motCle" th:value="${motCle}"/>
+<button type="submit">Chercher</button>
+</div>
+</form>
+
+</div>
+
+<div class="">
+<table class=" table table-bordered table-striped  ">
+<thead>
+<tr>
+<th>CIN</th><th>Nom</th><th>Date</th>
+<th>Age</th><th>Telephone</th><th>Email</th>
+<th>Type</th>
+<th>Supprimer</th>
+<th>Modifier</th>
+
+</tr>
+</thead>
+
+<tbody>
+<tr th:each="g:${pageGens.content}">
+<td th:text ="${g.cin}"></td>
+<td th:text ="${g.nom}"></td>
+<td th:text ="${g.dateNaissance}"></td>
+<td th:text ="${g.age}"></td>
+<td th:text ="${g.telephone}"></td>
+<td th:text ="${g.email}"></td>
+<td th:text ="${g.gtsType.nom}"></td>
+
+	<td><a onclick="return confirm('Etes vous Sure ?')"  th:href="@{supprimer(id=${g.cin})}">Supprimer</a></td>
+	<td><a th:href="@{edit(id=${g.cin})}">Edit</a></td>
+
+</tr>
+</tbody>
+</table>
+
+
+<div>
+	<ul class="nav nav-pills container ">
+	<li th:each="p:${pages}" th:class="${pageCourante==p}? 'active':''">
+	<a th:href="@{Index(page=${p},motCle=${motCle}) } " th:text="${p}"></a> 
+	</li>
+	</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>

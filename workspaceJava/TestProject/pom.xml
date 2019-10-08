@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>TestProject</groupId>
+	<artifactId>TestProject</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- remove when BridJ v0.7 is released -->
+
+	<!-- <repositories> -->
+	<!-- <repository> -->
+	<!-- <id>sonatype</id> -->
+	<!-- <name>Sonatype OSS Snapshots Repository</name> -->
+	<!-- <url>http://oss.sonatype.org/content/groups/public</url> -->
+	<!-- </repository> -->
+
+	<!-- </repositories> -->
+	<repositories>
+		<repository>
+			<id>maven2</id>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+		<repository>
+			<id>xuggle repo</id>
+			<!-- <url>http://xuggle.googlecode.com/svn/trunk/repo/share/java/</url> -->
+			<url>https://raw.github.com/smccarthy/xuggle-xuggler-dependency/master</url>
+		</repository>
+
+		<!-- <repository> -->
+		<!-- <id>com.teamdev</id> -->
+		<!-- <url>http://maven.teamdev.com/repository/products</url> -->
+		<!-- </repository> -->
+
+	</repositories>
+	<dependencies>
+
+		<!-- <dependency> -->
+		<!-- <groupId>com.teamdev.jxbrowser</groupId> -->
+		<!-- <artifactId>jxbrowser-cross-platform</artifactId> -->
+		<!-- <version>5.4.3</version> -->
+		<!-- </dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>com.teamdev.jxbrowser</groupId> -->
+		<!-- <artifactId>jxbrowser-cross-platform</artifactId> -->
+		<!-- <version>6.0</version> -->
+		<!-- </dependency> -->
+
+
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xuggle</groupId>
+			<artifactId>xuggle-xuggler</artifactId>
+			<version>5.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bytedeco</groupId>
+			<artifactId>javacv-platform</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.esotericsoftware/kryo -->
+		<dependency>
+			<groupId>com.esotericsoftware</groupId>
+			<artifactId>kryo</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+
+
+
+	</dependencies>
+
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

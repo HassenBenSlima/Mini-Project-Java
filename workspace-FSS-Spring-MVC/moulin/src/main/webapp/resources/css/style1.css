@@ -1,0 +1,43 @@
+
+
+
+
+table.table13 th{
+	
+	border: 1px dotted gray;
+	padding: 10px;
+	margin: 10px;
+
+}
+table.table13 td{
+	
+	border: 1px dotted gray;
+	padding: 10px;
+	margin: 10px;
+	background: white;
+}
+
+span.current {
+	
+	border: 1px solid gray;
+	padding: 10px;
+	margin: 10px;
+	background: #A6FFA6;
+}
+
+span.autrePage {
+	
+	border: 1px solid gray;
+	padding: 10px;
+	margin: 10px;
+	background: #69D482;
+	
+}
+
+.error{
+	color:red;
+	
+	
+}
+
+

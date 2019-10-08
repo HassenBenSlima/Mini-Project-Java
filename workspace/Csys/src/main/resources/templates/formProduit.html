@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+     th:href="@{css/bootstrap.min.css}"/>
+     
+     <link rel="stylesheet" type="text/css" href="../static/css/myStyle.css"
+     th:href="@{css/myStyle.css}"/>
+
+<title>Saisir d'un produit</title>
+</head>
+
+<body>
+<div class="col-md-6 col-sm-6 col-xs-12">
+<form th:action="saveProduit" method="post">
+<div th:object="${produit}">
+<div class="form-group">
+<label class="control-label">Designation:</label>
+<input class="form-control" type="text" name="designation" th:value="*{designation}" />
+<span th:errors="*{designation}"></span>
+</div>
+
+<div class="form-group">
+<label class="control-label">Prix:</label>
+<input class="form-control" type="text" name="prix" th:value="*{prix}" />
+<span th:errors="*{prix}"></span>
+</div>
+
+<div>
+<input class="btn btn-primary" type="submit" value="Save"/>
+</div>
+
+</div>
+</form>
+
+</div>
+
+</body>
+</html>

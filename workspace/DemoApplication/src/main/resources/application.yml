@@ -1,0 +1,39 @@
+
+
+
+spring:
+    application:
+        name: ClientMvcCatApplication
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: true
+    datasource:
+        url: jdbc:mysql://localhost:3306/prod
+        driverClassName: com.mysql.jdbc.Driver
+        username: root
+        password: 
+    jpa:
+       database-platform: org.hibernate.dialect.MySQL5Dialect
+       open-in-view: false
+       show-sql: true
+       hibernate:
+            ddl-auto: update
+            
+            naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+            naming:
+            
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+       
+       
+server:
+    port: 9700
+    
+liquibase:
+    enabled: false
+    
+    
+delete-categorie-without-check: true
+

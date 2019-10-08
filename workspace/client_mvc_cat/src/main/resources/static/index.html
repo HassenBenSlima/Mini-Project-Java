@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css"
+/>
+</head>
+<body  ng-app="myApp" ng-controller="IndexController" >
+
+<ul class="nav nav-pills">
+
+<li class="clickable" ng-repeat="m in menu" 
+ng-class="{active:m==selectedMenu}"	ng-click="select(m)"><a>{{m}}</a></li>
+
+</ul>
+
+<div ng-if="selectedMenu=='Inscription'">
+<div ng-include="'inscription.html'" ng-controller="InscriptionController"></div>
+</div>
+
+<div ng-if="selectedMenu=='Listes'">
+<div ng-include="'listEtudiants.html'" ng-controller="ListEtudiantController"></div>
+</div>
+
+<div ng-if="selectedMenu=='Logout'">
+<div ng-include="'logout'"  ></div>
+</div>
+
+
+{{selectedMenu}}
+
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="//unpkg.com/angular-ui-router@0.3.1/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="js/myApp.js"></script>
+
+</body>
+</html>

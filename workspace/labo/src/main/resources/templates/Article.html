@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+     th:href="@{css/bootstrap.min.css}"/>
+     
+     <link rel="stylesheet" type="text/css" href="../static/css/myStyle.css"
+     th:href="@{css/myStyle.css}"/>
+     <link rel="stylesheet" type="text/css" href="../static/css/style.css"
+     th:href="@{css/style.css}"/>
+       
+<title>Article</title>
+</head>
+<body>
+
+<div id="above"></div>
+
+<div class="plan">
+<header>
+
+    <img src="../static/img/logo.png" alt="Science Laboratory" title=""/>
+
+    <form>
+        <input type="text" id="Sch"  name="search" placeholder="Search.."/>
+    </form>
+</header>
+
+    <!--start: Navigation-->
+
+    <nav>
+<div class="nav">
+   <ul>
+       <li><a th:href="@{/home}"  >Acceuil</a></li>
+       <li><a th:href="@{/chercherLab}" >Laboratoire</a></li>
+       <li><a th:href="@{/chercherUnt}">Unité </a></li>
+       <li><a th:href="@{/chercherC}">Chercheur</a></li>
+       <li><a th:href="@{/chercherArt}" class="active">Article</a></li>
+       <li><a th:href="@{/home}">Mission</a></li>
+      
+       
+   </ul>
+</div>
+</nav>
+    <!--end: Navigation-->
+
+    <div class="image">
+<p>Gestion <br/>
+        de laboratoire
+</p>
+    </div>
+
+
+
+    <section>
+
+<article>
+    <!-- 3 pictures-->
+    <p id="conseil">Conseils</p>
+  <div class="black_banniere">
+
+    <div class="container">
+        <img src="../static/img/wallup-38244.jpg" alt="Avatar" class="image1"/>
+        <div class="overlay">
+            <div class="text">Hello <br/>World</div>
+        </div>
+     <p>Brain</p>
+    </div>
+
+    <div class="container">
+        <img src="../static/img/wallup-318665.jpg" alt="Avatar" class="image1"/>
+        <div class="overlay">
+            <div class="text">Helo <br/>World</div>
+        </div>
+        <p>Brain</p>
+    </div>
+
+    <div class="container" id="block3">
+        <img src="../static/img/wallup-7459.jpg" alt="Avatar" class="image1"/>
+        <div class="overlay">
+            <div class="text">Hello <br/>World</div>
+        </div>
+        <p>Brain</p>
+    </div>
+
+  </div>
+    <!--end: 3 pictures_-->
+</article>
+ 
+<article>
+    <div class="banniere_desc">
+        Un laboratoire de recherche est une structure sociale constituée ...
+<div class="banniere_bottom">
+Les Sciences
+    <div class="banniere_botton">
+        <a href="#"> lire plus »</a>
+    </div>
+</div>
+    </div>
+
+</article>
+ 
+</section>
+<hr id="h"/>
+<section>
+    <div class="inf">
+
+    <article>
+
+
+
+            <div id="one">
+
+
+
+
+
+<!-- Contenu -->
+
+<div class=" spacer">
+
+<form action="chercherArt" method="get">
+<label>Mot clé:</label>
+<input type="text" name="mc" />
+<input type="submit" value="Chercher" />
+
+</form>
+
+</div>
+
+<div class="spacer">
+<table class="table table-striped" border="3">
+<thead>
+<tr>
+<th>Code article</th><th>Nbre Page </th><th>nom confirmation</th>
+<th>Titre</th><th>numero</th>
+</tr>
+</thead>
+
+<tbody>
+<tr th:each="a:${pageArt.content}">
+<td th:text ="${a.codeArt}"></td>
+<td th:text ="${a.nbrePage}"></td>
+<td th:text ="${a.nomConf}"></td>
+<td th:text ="${a.titre}"></td>
+<td th:text ="${a.chercheur.numChercheur}"></td>
+</tr>
+</tbody>
+</table>
+
+
+<div>
+	<ul class="nav nav-pills HM">
+	<li th:each="p:${pages}" th:class="${pageCourante==p}? 'active':''">
+	<a th:href="@{/chercherArt(page=${p},mc=${mc}) } " th:text="${p}"></a> 
+	</li>
+	</ul>
+</div>
+
+</div>
+
+<!-- Fin Contenu -->
+
+            </div>
+
+
+
+    </article>
+    <aside> 
+Liste des Articles    
+    
+    </aside>
+</div>
+</section>
+</div>
+
+<footer>
+
+    <div class="bar">
+
+        <img src="../static/img/logo.png" alt="Science Laboratory" title="" />
+        <ul>
+            <li><a href="">start</a> </li>
+            <li><a href="">about</a></li>
+            <li><a href="">services</a></li>
+            <li><a href="">contact</a></li>
+        </ul>
+
+    </div>
+
+<div id="foot_left">
+    <p class="txt">Informations :</p>
+    <hr/>
+    <p id="i">Einstein :
+
+    </p>
+    <img src="../static/img/wallup-125881.jpg" id ="Einstein" alt="Science Laboratory" title="Einstein" />
+</div>
+    <div id="foot_middle">
+        <p class="txt">Gallery</p>
+        <hr/>
+        <img src="../static/img/wallup-175893.jpg" alt="Science Laboratory" title="" />
+        <img src="../static/img/index-4.jpg" alt="Science Laboratory" title="" />
+
+        <img src="../static/img/hand.jpg" alt="Science Laboratory" title="" />
+
+        <img src="../static/img/man.jpg" alt="Science Laboratory" title="" />
+        <img src="../static/img/home-1.jpg" alt="Science Laboratory" title=""/>
+
+        <img src="../static/img/index-2.jpg" alt="Science Laboratory" title=""/>
+        <img src="../static/img/fotolia.jpg" alt="Science Laboratory" title=""/>
+
+        <img src="../static/img/index-3.jpg" alt="Science Laboratory" title=""/>
+
+    </div>
+    <div id="foot_rigth">
+        <p class="txt">Contact</p>
+        <hr/>
+        <a href=""><img src="../static/img/facebook.png" alt="Science Laboratory" title=""/></a>
+        <a href=""> <img src="../static/img/Twitter-PNG-File.png" alt="Science Laboratory" title=""/></a>
+        <a href=""> <img src="../static/img/linkedin.png" alt="Science Laboratory" title=""/></a>
+        <a href=""> <img src="../static/img/youtube.gif" alt="Science Laboratory" title=""/></a>
+
+        <p class="txt">Reclamation</p>
+        <hr/>
+        <p id="em">s'il vous plait mettre ton email</p>
+        <form>
+            <input type="email" id="ftxt"  name="email" placeholder="Email.."/>
+            <input type="submit" value="Clic" class="btn_f"/>
+        </form>
+
+    </div>
+
+
+
+</footer>
+
+</body>
+</html>

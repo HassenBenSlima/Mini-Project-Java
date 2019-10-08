@@ -1,0 +1,8 @@
+org\baeldung\spring\MvcConfig.class
+org\baeldung\security\RefererAuthenticationSuccessHandler.class
+org\baeldung\security\CustomAccessDeniedHandler.class
+org\baeldung\security\CustomLogoutSuccessHandler.class
+org\baeldung\spring\SecSecurityConfig.class
+org\baeldung\spring\ChannelSecSecurityConfig.class
+org\baeldung\spring\RedirectionSecurityConfig.class
+org\baeldung\controller\SecuredResourceController.class
